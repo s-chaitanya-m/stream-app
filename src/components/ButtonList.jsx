@@ -13,9 +13,9 @@ const dummyButtonList = [
 ];
 const ButtonList = () => {
   return (
-    <div className="w-full flex overflow-x-scroll no-scrollbar">
+    <div className="w-full mb-2 flex overflow-x-scroll no-scrollbar">
       {dummyButtonList.map((b) => (
-        <Button name={b} />
+        <Button key={b} name={b} />
       ))}
     </div>
   );
