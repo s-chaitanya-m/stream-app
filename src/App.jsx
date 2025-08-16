@@ -2,6 +2,26 @@ import { Provider } from "react-redux";
 import Body from "./components/Body";
 import Head from "./components/Head";
 import store from "./redux/store";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import MainContainer from "./components/MainContainer";
+import WatchPage from "./components/WatchPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Body />,
+    children: [
+      {
+        path: "/",
+        element: <MainContainer />,
+      },
+      {
+        path: "watch",
+        element: <WatchPage />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
@@ -9,7 +29,7 @@ function App() {
       <div className="h-[calc(100vh-16px)] m-2">
         <div className="h-full flex flex-col">
           <Head />
-          <Body />
+          <RouterProvider router={router} />
         </div>
       </div>
     </Provider>
