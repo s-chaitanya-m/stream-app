@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../redux/slice/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import SearchDropdown from "./SearchDropdown";
+import { cacheResults } from "../redux/slice/searchSlice";
 
 const Head = () => {
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState("");
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [showSuggestions, toggleSuggestions] = useState(false);
+  const searchCache = useSelector((store) => store.search);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      getSearchSuggestions();
+      if (searchCache[searchQuery]) {
+        setSearchSuggestions(searchCache[searchQuery]);
+      } else {
+        getSearchSuggestions();
+      }
     }, 800);
 
     return () => {
@@ -24,6 +30,9 @@ const Head = () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
     setSearchSuggestions(json[1]);
+
+    //update search cache
+    dispatch(cacheResults({ [searchQuery]: json[1] }));
   };
   return (
     <div className="p-4 mb-2 gap-2 flex justify-between items-center rounded-lg shadow-lg">
