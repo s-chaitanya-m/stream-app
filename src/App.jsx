@@ -26,7 +26,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
-      <div className="h-[calc(100vh-16px)] m-2">
+      <div className="h-[calc(100vh-16px)] m-2 overflow-y-scroll no-scrollbar">
         <div className="h-full flex flex-col">
           <Head />
           <RouterProvider router={router} />

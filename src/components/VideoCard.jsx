@@ -5,10 +5,10 @@ const VideoCard = ({ info }) => {
   const { channelTitle, title, thumbnails, publishedAt } = snippet;
 
   return (
-    <div className="w-78 mr-2 rounded-lg shadow-lg">
+    <div className="h-full p-2">
       <img
-        className="rounded-lg"
-        src={thumbnails.medium.url}
+        className="w-full aspect-video rounded-lg"
+        src={thumbnails.maxres?.url || thumbnails.medium.url}
         alt="video_thumbnail"
       />
       <div className="p-2">
