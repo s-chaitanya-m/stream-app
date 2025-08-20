@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { YOUTUBE_VIDEO_API } from "../utils/constants";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { saveVideos } from "../redux/slice/videoSlice";
 
 const VideoContainer = () => {
-  const [videos, setVideos] = useState([]);
+  const dispatch = useDispatch();
+  const { videos } = useSelector((store) => store.video);
 
   useEffect(() => {
     getVideos();
@@ -13,7 +16,7 @@ const VideoContainer = () => {
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_VIDEO_API);
     const json = await data.json();
-    setVideos(json.items);
+    dispatch(saveVideos(json.items));
   };
   if (videos.length === 0) return null;
   return (

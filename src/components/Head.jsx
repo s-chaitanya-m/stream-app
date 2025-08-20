@@ -51,7 +51,7 @@ const Head = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onFocus={() => toggleSuggestions(true)}
-          onBlur={() => toggleSuggestions(false)}
+          // onBlur={() => toggleSuggestions(false)}
           className="w-1/2 px-2 rounded-l-full border border-gray-400"
           placeholder="Search"
           type="text"
@@ -59,7 +59,13 @@ const Head = () => {
         <button className="px-4 rounded-r-full bg-gray-100  border border-gray-400">
           <img className="w-6" src="src/assets/search.svg" alt="search" />
         </button>
-        {showSuggestions && <SearchDropdown suggestions={searchSuggestions} />}
+        {showSuggestions && (
+          <SearchDropdown
+            suggestions={searchSuggestions}
+            setSearchQuery={setSearchQuery}
+            toggleSuggestions={toggleSuggestions}
+          />
+        )}
       </div>
       <div className="bg-gray-300 rounded-full">
         <img className="w-8 p-1" src="src/assets/user.svg" alt="user" />

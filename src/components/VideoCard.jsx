@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoCard = ({ info }) => {
   const { snippet, statistics } = info;
-  const { channelTitle, title, thumbnails, publishedAt } = snippet;
+  const { channelTitle, title, thumbnails } = snippet;
 
   return (
     <div className="h-full p-2">
@@ -14,8 +14,10 @@ const VideoCard = ({ info }) => {
       <div className="p-2">
         <div className="font-bold">{title}</div>
         <div>{channelTitle}</div>
-        <div className="font-light">{statistics.viewCount + " views"}</div>
-        {/* <div>{new Date(publishedAt).toISOString().split("T")[0]}</div> */}
+        {statistics && (
+          <div className="font-light">{statistics.viewCount + " views"}</div>
+        )}
+        {/* <div>{new Date(snippet.publishedAt).toISOString().split("T")[0]}</div> */}
       </div>
     </div>
   );
