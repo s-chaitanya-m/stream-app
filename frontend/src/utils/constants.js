@@ -1,17 +1,11 @@
-const api_key = import.meta.env.VITE_GOOGLE_KEY;
-
 export const LIVE_CHAT_COUNT = 25;
 
-export const YOUTUBE_VIDEO_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key=" +
-  api_key;
+export const YOUTUBE_VIDEO_API = "http://localhost:5000/api/mostPopular";
 
-export const YOUTUBE_SEARCH_RESULTS_API =
-  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&type=video&regionCode=IN&key=" +
-  api_key;
+export const YOUTUBE_SEARCH_RESULTS_API = "http://localhost:5000/api/search?q=";
 
 export const YOUTUBE_SEARCH_API =
-  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "http://localhost:5000/api/searchSuggestions?q=";
 
 export const commentData = [
   {

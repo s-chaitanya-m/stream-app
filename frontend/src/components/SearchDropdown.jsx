@@ -7,7 +7,7 @@ const SearchDropdown = ({ suggestions, toggleSuggestions, setSearchQuery }) => {
   const dispatch = useDispatch();
 
   const onSearchHandler = async (searchString) => {
-    const data = await fetch(YOUTUBE_SEARCH_RESULTS_API + "&q=" + searchString);
+    const data = await fetch(YOUTUBE_SEARCH_RESULTS_API + searchString);
     const json = await data.json();
     dispatch(saveVideos(json.items));
     setSearchQuery(searchString);
