@@ -7,7 +7,7 @@ const SearchDropdown = ({ suggestions, toggleSuggestions, setSearchQuery }) => {
   const dispatch = useDispatch();
 
   const onSearchHandler = async (searchString) => {
-    const data = await fetch(YOUTUBE_SEARCH_RESULTS_API + "&q=" + searchString);
+    const data = await fetch(YOUTUBE_SEARCH_RESULTS_API + searchString);
     const json = await data.json();
     dispatch(saveVideos(json.items));
     setSearchQuery(searchString);
@@ -25,7 +25,7 @@ const SearchDropdown = ({ suggestions, toggleSuggestions, setSearchQuery }) => {
           key={s}
           className="flex gap-2 hover:bg-gray-100"
         >
-          <img className="w-4" src="src/assets/search.svg" alt="search" />
+          <img className="w-4" src="/assets/search.svg" alt="search" />
           {s}
         </div>
       ))}
