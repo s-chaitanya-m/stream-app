@@ -1,11 +1,10 @@
 export const LIVE_CHAT_COUNT = 25;
 
-export const YOUTUBE_VIDEO_API = "http://localhost:5000/api/mostPopular";
+export const YOUTUBE_VIDEO_API = `/api/mostPopular`;
 
-export const YOUTUBE_SEARCH_RESULTS_API = "http://localhost:5000/api/search?q=";
+export const YOUTUBE_SEARCH_RESULTS_API = `/api/search?q=`;
 
-export const YOUTUBE_SEARCH_API =
-  "http://localhost:5000/api/searchSuggestions?q=";
+export const YOUTUBE_SEARCH_API = `/api/searchSuggestions?q=`;
 
 export const commentData = [
   {

@@ -39,11 +39,11 @@ const Head = () => {
       <div className="flex">
         <img
           className="w-8 p-1 rounded-full hover:bg-gray-300 cursor-pointer"
-          src="src/assets/hamburger-menu.svg"
+          src="/assets/hamburger-menu.svg"
           alt="menu"
           onClick={() => dispatch(toggleMenu())}
         />
-        <img className="w-8 ml-2" src="src/assets/youtubeLogo.svg" alt="logo" />
+        <img className="w-8 ml-2" src="/assets/youtubeLogo.svg" alt="logo" />
         <div className="font-bold text-2xl">YouTube</div>
       </div>
       <div className="relative h-8 flex flex-1 justify-center">
@@ -57,7 +57,7 @@ const Head = () => {
           type="text"
         />
         <button className="px-4 rounded-r-full bg-gray-100  border border-gray-400">
-          <img className="w-6" src="src/assets/search.svg" alt="search" />
+          <img className="w-6" src="/assets/search.svg" alt="search" />
         </button>
         {showSuggestions && (
           <SearchDropdown
@@ -68,7 +68,7 @@ const Head = () => {
         )}
       </div>
       <div className="bg-gray-300 rounded-full">
-        <img className="w-8 p-1" src="src/assets/user.svg" alt="user" />
+        <img className="w-8 p-1" src="/assets/user.svg" alt="user" />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ const Comment = ({ data }) => {
       <div className="flex align-top shadow-sm bg-gray-100 p-2 my-1 rounded-lg">
         <img
           className="bg-gray-400 w-8 h-8 p-1 rounded-full"
-          src="src/assets/user.svg"
+          src="/assets/user.svg"
           alt="user"
         />
         <div className="px-2">
@@ -20,7 +20,7 @@ const Comment = ({ data }) => {
               className="flex px-2 gap-1 items-center bg-sky-300 rounded-full w-max text-white"
             >
               <p className="text-sm font-extralight">replies</p>
-              <img className="h-3 w-3" src="/src/assets/downarrow.png" alt="" />
+              <img className="h-3 w-3" src="//assets/downarrow.png" alt="" />
             </div>
           )}
         </div>

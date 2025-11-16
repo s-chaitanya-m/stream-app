@@ -25,7 +25,7 @@ const SearchDropdown = ({ suggestions, toggleSuggestions, setSearchQuery }) => {
           key={s}
           className="flex gap-2 hover:bg-gray-100"
         >
-          <img className="w-4" src="src/assets/search.svg" alt="search" />
+          <img className="w-4" src="/assets/search.svg" alt="search" />
           {s}
         </div>
       ))}

@@ -5,7 +5,7 @@ const ChatMessage = ({ name, message }) => {
     <div className="flex mb-1 gap-2 items-center shadow-sm p-1">
       <img
         className="w-8 h-8 p-1 bg-gray-400 rounded-full"
-        src="src/assets/user.svg"
+        src="/assets/user.svg"
         alt="user"
       />
 
