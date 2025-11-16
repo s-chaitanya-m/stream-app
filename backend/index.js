@@ -7,10 +7,10 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+const FE_URL = process.env.FE_URL || "http://frondend";
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://frontend"],
+    origin: ["http://localhost:5173", FE_URL],
   })
 );
 

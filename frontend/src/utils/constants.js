@@ -1,10 +1,12 @@
+const BASE_URL = import.meta.env.VITE_BASE_URL || "";
+
 export const LIVE_CHAT_COUNT = 25;
 
-export const YOUTUBE_VIDEO_API = `/api/mostPopular`;
+export const YOUTUBE_VIDEO_API = `${BASE_URL}/api/mostPopular`;
 
-export const YOUTUBE_SEARCH_RESULTS_API = `/api/search?q=`;
+export const YOUTUBE_SEARCH_RESULTS_API = `${BASE_URL}/api/search?q=`;
 
-export const YOUTUBE_SEARCH_API = `/api/searchSuggestions?q=`;
+export const YOUTUBE_SEARCH_API = `${BASE_URL}/api/searchSuggestions?q=`;
 
 export const commentData = [
   {
