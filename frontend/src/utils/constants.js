@@ -22,7 +22,7 @@ export const commentData = [
           {
             id: Math.random(),
             name: "Chaitu",
-            text: "Bleh Bleh Bleh",
+            text: "Bleh Bleh Blah",
             replies: [],
           },
         ],
